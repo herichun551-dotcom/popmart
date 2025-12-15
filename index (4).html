@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>泡泡玛特国潮系列</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      background-color:#f0e6d6;
+      /* 如需本地背景图：把你的背景图放同目录，然后改成 url('./bg.jpg') */
+      background: radial-gradient(circle at 20% 10%, rgba(255,255,255,.65), rgba(240,230,214,1) 55%, rgba(230,215,190,1));
+    }
+    .product-card{transition:all .3s ease;}
+    .product-card:hover{transform:translateY(-8px);box-shadow:0 12px 20px rgba(0,0,0,.2);}
+    .modal-content{animation:fadeIn .25s ease;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+  </style>
+</head>
+
+<body class="font-sans">
+  <!-- 头部横幅 -->
+  <header class="bg-red-900 text-white py-10 px-4 md:px-8">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl md:text-5xl font-bold mb-2">泡泡玛特国潮系列</h1>
+      <p class="text-lg md:text-xl opacity-90">潮玩为媒，传承千年东方美学</p>
+    </div>
+  </header>
+
+  <!-- 产品展示区 -->
+  <main class="container mx-auto py-10 px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- 说明：
+           你这次使用的是【本地图片】。请确保 index.html 与图片放在同一个文件夹里。
+           图片文件名（同目录）：WechatIMG278.jpeg ~ WechatIMG283.png
+      -->
+
+      <!-- MOLLY吹笛唤春 -->
+      <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer" onclick="openModal('modal1')">
+        <img src="./WechatIMG278.jpeg" alt="MOLLY吹笛唤春" class="w-full h-56 object-cover" loading="eager"
+             onerror="this.alt='图片加载失败：WechatIMG278.jpeg'; this.style.objectFit='contain'; this.style.padding='12px'; this.src='';">
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-red-800">MOLLY吹笛唤春</h3>
+          <p class="text-gray-600 mt-2">春节申遗成功纪念款</p>
+        </div>
+      </div>
+
+      <!-- MEGA SPACE MOLLY 藏金无痕木 -->
+      <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer" onclick="openModal('modal2')">
+        <img src="./WechatIMG279.jpeg" alt="MEGA SPACE MOLLY 藏金无痕木" class="w-full h-56 object-cover" loading="eager"
+             onerror="this.alt='图片加载失败：WechatIMG279.jpeg'; this.style.objectFit='contain'; this.style.padding='12px'; this.src='';">
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-red-800">MEGA SPACE MOLLY 藏金无痕木</h3>
+          <p class="text-gray-600 mt-2">非遗古法错金技艺力作</p>
+        </div>
+      </div>
+
+      <!-- SKULLPANDA庭前墨梅 -->
+      <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer" onclick="openModal('modal3')">
+        <img src="./WechatIMG280.jpeg" alt="SKULLPANDA庭前墨梅" class="w-full h-56 object-cover" loading="eager"
+             onerror="this.alt='图片加载失败：WechatIMG280.jpeg'; this.style.objectFit='contain'; this.style.padding='12px'; this.src='';">
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-red-800">SKULLPANDA庭前墨梅</h3>
+          <p class="text-gray-600 mt-2">水墨写意国风美学</p>
+        </div>
+      </div>
+
+      <!-- DIMOO一盏风月 -->
+      <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer" onclick="openModal('modal4')">
+        <img src="./WechatIMG281.jpeg" alt="DIMOO一盏风月" class="w-full h-56 object-cover" loading="eager"
+             onerror="this.alt='图片加载失败：WechatIMG281.jpeg'; this.style.objectFit='contain'; this.style.padding='12px'; this.src='';">
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-red-800">DIMOO一盏风月</h3>
+          <p class="text-gray-600 mt-2">东方雅致元素合集</p>
+        </div>
+      </div>
+
+      <!-- 哪吒天生羁绊系列 -->
+      <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer" onclick="openModal('modal5')">
+        <img src="./WechatIMG282.jpeg" alt="哪吒天生羁绊系列" class="w-full h-56 object-cover" loading="eager"
+             onerror="this.alt='图片加载失败：WechatIMG282.jpeg'; this.style.objectFit='contain'; this.style.padding='12px'; this.src='';">
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-red-800">哪吒天生羁绊系列</h3>
+          <p class="text-gray-600 mt-2">电影经典场景还原</p>
+        </div>
+      </div>
+
+      <!-- 吉贝系列 -->
+      <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer" onclick="openModal('modal6')">
+        <img src="./WechatIMG283.png" alt="吉贝系列" class="w-full h-56 object-cover" loading="eager"
+             onerror="this.alt='图片加载失败：WechatIMG283.png'; this.style.objectFit='contain'; this.style.padding='12px'; this.src='';">
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-red-800">吉贝系列</h3>
+          <p class="text-gray-600 mt-2">黎锦非遗与民族体育融合</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 产品详情弹窗 -->
+  <div id="modal1" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden modal-content">
+    <div class="bg-white w-full max-w-2xl rounded-lg p-6 relative">
+      <button onclick="closeModal('modal1')" class="absolute top-4 right-4 text-xl text-gray-500 hover:text-red-800">&times;</button>
+      <h2 class="text-2xl font-bold text-red-800 mb-4">MOLLY吹笛唤春</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img src="./WechatIMG278.jpeg" alt="MOLLY吹笛唤春" class="rounded-lg w-full">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">国潮故事</h3>
+          <p class="text-gray-700 mb-4">该产品是MOLLY中国传统文化巡回之旅的首款春节产品，诞生于春节申遗成功的文化背景下，在西安大唐芙蓉园的非遗购物月活动中正式发布，成为非遗与潮玩融合的标志性产品。</p>
+          <h3 class="text-xl font-semibold mb-2">设计灵感</h3>
+          <p class="text-gray-700">以唐代乐俑为原型，MOLLY化身吹笛女孩，身着边缘白色植绒且印有凤凰图案的红色斗篷。背卡设计还联动知名艺术家朴缜，用传统节庆元素传递春日喜悦。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal2" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden modal-content">
+    <div class="bg-white w-full max-w-2xl rounded-lg p-6 relative">
+      <button onclick="closeModal('modal2')" class="absolute top-4 right-4 text-xl text-gray-500 hover:text-red-800">&times;</button>
+      <h2 class="text-2xl font-bold text-red-800 mb-4">MEGA SPACE MOLLY 400% 藏金无痕木</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img src="./WechatIMG279.jpeg" alt="MEGA SPACE MOLLY 藏金无痕木" class="rounded-lg w-full">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">国潮故事</h3>
+          <p class="text-gray-700 mb-4">在第八届中国非物质文化遗产博览会上引发广泛关注，是泡泡玛特与非遗技艺传承人深度合作的成果，让源于商周时期的古法错金技艺在潮玩领域重获新生。</p>
+          <h3 class="text-xl font-semibold mb-2">设计灵感</h3>
+          <p class="text-gray-700">将科幻感的MOLLY宇航服与传统木质材质结合，核心亮点是采用古法错金技艺，把金线巧妙镶嵌于木纹之中，实现传统工艺与现代潮流的完美碰撞。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal3" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden modal-content">
+    <div class="bg-white w-full max-w-2xl rounded-lg p-6 relative">
+      <button onclick="closeModal('modal3')" class="absolute top-4 right-4 text-xl text-gray-500 hover:text-red-800">&times;</button>
+      <h2 class="text-2xl font-bold text-red-800 mb-4">SKULLPANDA庭前墨梅</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img src="./WechatIMG280.jpeg" alt="SKULLPANDA庭前墨梅" class="rounded-lg w-full">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">国潮故事</h3>
+          <p class="text-gray-700 mb-4">系列以梅花的坚韧生命力为精神内核，契合东方文化中对君子风骨的推崇，其隐藏款“梅”凭借极致的传统美学设计，成为年轻收藏者热议的焦点藏品。</p>
+          <h3 class="text-xl font-semibold mb-2">设计灵感</h3>
+          <p class="text-gray-700">采用传统水墨的写意手法呈现梅花姿态，通过色彩晕染模拟水墨画的层次感，隐藏款“梅”更是将留白、写意等传统美学理念融入设计，凸显东方美学的含蓄之美。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal4" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden modal-content">
+    <div class="bg-white w-full max-w-2xl rounded-lg p-6 relative">
+      <button onclick="closeModal('modal4')" class="absolute top-4 right-4 text-xl text-gray-500 hover:text-red-800">&times;</button>
+      <h2 class="text-2xl font-bold text-red-800 mb-4">DIMOO一盏风月</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img src="./WechatIMG281.jpeg" alt="DIMOO一盏风月" class="rounded-lg w-full">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">国潮故事</h3>
+          <p class="text-gray-700 mb-4">以“东方雅集”为主题，融合了传统文人生活中的茶、香、花、画等元素，展现了古代雅士的诗意生活，让年轻用户通过潮玩感受传统文化的雅致韵味。</p>
+          <h3 class="text-xl font-semibold mb-2">设计灵感</h3>
+          <p class="text-gray-700">提取了中式庭院、折扇、灯笼、古琴等元素，配色采用低饱和度的“莫兰迪国风色”，既保留了传统美学的温润感，又符合当代年轻人的审美偏好。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal5" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden modal-content">
+    <div class="bg-white w-full max-w-2xl rounded-lg p-6 relative">
+      <button onclick="closeModal('modal5')" class="absolute top-4 right-4 text-xl text-gray-500 hover:text-red-800">&times;</button>
+      <h2 class="text-2xl font-bold text-red-800 mb-4">哪吒天生羁绊系列</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img src="./WechatIMG282.jpeg" alt="哪吒天生羁绊系列" class="rounded-lg w-full">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">国潮故事</h3>
+          <p class="text-gray-700 mb-4">联动动画电影《哪吒之魔童降世》，还原了“我命由我不由天”的经典主题，将传统神话形象与现代潮玩设计结合，成为国漫IP与潮玩跨界的标杆产品。</p>
+          <h3 class="text-xl font-semibold mb-2">设计灵感</h3>
+          <p class="text-gray-700">以电影中哪吒的“混天绫”“火尖枪”等武器为装饰元素，配色延续了电影中的红、黑、橙撞色风格，同时加入了传统祥云纹，强化国潮辨识度。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal6" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden modal-content">
+    <div class="bg-white w-full max-w-2xl rounded-lg p-6 relative">
+      <button onclick="closeModal('modal6')" class="absolute top-4 right-4 text-xl text-gray-500 hover:text-red-800">&times;</button>
+      <h2 class="text-2xl font-bold text-red-800 mb-4">吉贝系列</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <img src="./WechatIMG283.png" alt="吉贝系列" class="rounded-lg w-full">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">国潮故事</h3>
+          <p class="text-gray-700 mb-4">与海南黎族非遗黎锦合作，将“吉贝（黎锦原料木棉）”的文化符号与民族体育项目结合，是泡泡玛特“非遗+潮玩+民族文化”融合的创新尝试。</p>
+          <h3 class="text-xl font-semibold mb-2">设计灵感</h3>
+          <p class="text-gray-700">提取黎锦中的“人形纹”“几何纹”作为装饰，配色采用黎锦传统的红、黄、棕三色，同时将蹴鞠、射箭等古代体育元素融入潮玩造型，传递民族文化活力。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(modalId){ document.getElementById(modalId).classList.remove('hidden'); }
+    function closeModal(modalId){ document.getElementById(modalId).classList.add('hidden'); }
+    // 点击遮罩关闭（可选）
+    document.addEventListener('click', (e)=>{
+      const modal = e.target?.classList?.contains('modal-content') ? e.target : null;
+      if(modal){ modal.classList.add('hidden'); }
+    });
+  </script>
+</body>
+</html>
